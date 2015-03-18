@@ -1,0 +1,14 @@
+Epsi\Bundle\BlogBundle\Entity\Tag:
+    type: entity
+    table: null
+    repositoryClass: Epsi\Bundle\BlogBundle\Entity\TagRepository
+    fields:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+        name:
+            type: string
+            length: '30'
+    lifecycleCallbacks: {  }

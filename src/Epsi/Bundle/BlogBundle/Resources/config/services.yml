@@ -1,0 +1,7 @@
+parameters:
+#    epsi_blog.example.class: Epsi\Bundle\BlogBundle\Example
+
+services:
+#    epsi_blog.example:
+#        class: %epsi_blog.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
