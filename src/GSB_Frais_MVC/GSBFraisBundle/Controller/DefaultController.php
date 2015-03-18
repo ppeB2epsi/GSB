@@ -1,6 +1,6 @@
 <?php
 
-namespace GSB__Frais_MVC\GSBFraisBundle\Controller;
+namespace GSB_Frais_MVC\GSBFraisBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
