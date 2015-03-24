@@ -6,9 +6,17 @@
  * Time: 10:57
  */
 
-namespace GSB__Frais_MVC\GSBFraisBundle\Tests\Controller;
+namespace GSB_Frais_MVC\GSBFraisBundle\Tests\Controller;
+
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 
-class LoginController {
+class LoginController extends Controller
+{
+
+    public function indexAction($name)
+    {
+        return $this->render('GSBFraisBundle:Default:index.html.twig', array('name' => $name));
+    }
 
 }

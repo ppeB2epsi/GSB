@@ -1,3 +1,13 @@
+gsb_frais_login:
+    path:     /GSB/login/{name}
+    defaults: { _controller: LoginController:Default:index }
+
 gsb_frais_homepage:
-    path:     /GSB/hello/{name}
-    defaults: { _controller: GSBFraisBundle:Default:index }
+  path:     /GSB/visiteur/{name}
+  defaults: { _controller: VisiteurController:Default:index }
+
+gsb_frais_homepage:
+    path:     /GSB/comptable/{name}
+    defaults: { _controller: ComptableController:Default:index }
+
+

@@ -11,7 +11,7 @@ namespace GSB_Frais_MVC\GSBFraisBundle\Tests\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 
-class LoginController extends Controller
+class ComptableController extends Controller
 {
 
     public function indexAction($name)
