@@ -553,13 +553,13 @@ class appDevDebugProjectContainer extends Container
     protected function getDoctrine_Orm_DefaultEntityManagerService()
     {
         $a = new \Doctrine\Common\Cache\ArrayCache();
-        $a->setNamespace('sf2orm_default_b0676ab027417ba3f19617ad9199b4be');
+        $a->setNamespace('sf2orm_default_8e49d1b26f13c1074dda47c019f184c7');
 
         $b = new \Doctrine\Common\Cache\ArrayCache();
-        $b->setNamespace('sf2orm_default_b0676ab027417ba3f19617ad9199b4be');
+        $b->setNamespace('sf2orm_default_8e49d1b26f13c1074dda47c019f184c7');
 
         $c = new \Doctrine\Common\Cache\ArrayCache();
-        $c->setNamespace('sf2orm_default_b0676ab027417ba3f19617ad9199b4be');
+        $c->setNamespace('sf2orm_default_8e49d1b26f13c1074dda47c019f184c7');
 
         $d = new \Doctrine\ORM\Mapping\Driver\SimplifiedXmlDriver(array(($this->targetDirs[3].'/src/GSB_Frais_MVC/GSBFraisBundle/Resources/config/doctrine') => 'GSB_Frais_MVC\\GSBFraisBundle\\Entity'));
         $d->setGlobalBasename('mapping');

@@ -16,7 +16,7 @@ class AppKernel extends Kernel
             new Symfony\Bundle\AsseticBundle\AsseticBundle(),
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
-            new GSB_Frais_MVC\GSBFraisBundle\GSBFraisBundle(),
+            new GSB_Frais_MVC\GSBFraisBundle\GSBFraisBundle()
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
