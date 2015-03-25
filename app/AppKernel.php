@@ -16,7 +16,6 @@ class AppKernel extends Kernel
             new Symfony\Bundle\AsseticBundle\AsseticBundle(),
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
-            new Epsi\Bundle\BlogBundle\EpsiBlogBundle(),
             new GSB_Frais_MVC\GSBFraisBundle\GSBFraisBundle(),
         );
 

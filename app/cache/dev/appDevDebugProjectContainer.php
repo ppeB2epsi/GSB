@@ -553,13 +553,13 @@ class appDevDebugProjectContainer extends Container
     protected function getDoctrine_Orm_DefaultEntityManagerService()
     {
         $a = new \Doctrine\Common\Cache\ArrayCache();
-        $a->setNamespace('sf2orm_default_8e49d1b26f13c1074dda47c019f184c7');
+        $a->setNamespace('sf2orm_default_b0676ab027417ba3f19617ad9199b4be');
 
         $b = new \Doctrine\Common\Cache\ArrayCache();
-        $b->setNamespace('sf2orm_default_8e49d1b26f13c1074dda47c019f184c7');
+        $b->setNamespace('sf2orm_default_b0676ab027417ba3f19617ad9199b4be');
 
         $c = new \Doctrine\Common\Cache\ArrayCache();
-        $c->setNamespace('sf2orm_default_8e49d1b26f13c1074dda47c019f184c7');
+        $c->setNamespace('sf2orm_default_b0676ab027417ba3f19617ad9199b4be');
 
         $d = new \Doctrine\ORM\Mapping\Driver\SimplifiedYamlDriver(array(($this->targetDirs[3].'/src/Epsi/Bundle/BlogBundle/Resources/config/doctrine') => 'Epsi\\Bundle\\BlogBundle\\Entity'));
         $d->setGlobalBasename('mapping');
