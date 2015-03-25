@@ -27,7 +27,7 @@
     <parameter key="database_driver">pdo_mysql</parameter>
     <parameter key="database_host">127.0.0.1</parameter>
     <parameter key="database_port"></parameter>
-    <parameter key="database_name">Blog</parameter>
+    <parameter key="database_name">gsb_frais</parameter>
     <parameter key="database_user">root</parameter>
     <parameter key="database_password"></parameter>
     <parameter key="mailer_transport">smtp</parameter>
