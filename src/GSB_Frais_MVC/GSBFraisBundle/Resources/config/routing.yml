@@ -2,11 +2,15 @@ gsb_frais_login:
     path:     /GSB/login/{name}
     defaults: { _controller: GSBFraisBundle:Login:index }
 
-gsb_frais_homepage:
-  path:     /GSB/visiteur/{name}
-  defaults: { _controller: VisiteurController:Default:index }
+gsb_frais_visiteur:
+  path:     /GSB/visiteur
+  defaults: { _controller: GSBFraisBundle:Visiteur:index }
 
-gsb_frais_homepage:
+gsb_frais_comptable:
     path:     /GSB/comptable/{name}
-    defaults: { _controller: ComptableController:Default:index }
+    defaults: { _controller: GSBFraisBundle:Comptable:index }
+
+gsb_frais_print:
+    path:     /GSB/visiteur/print
+    defaults: { _controller: GSBFraisBundle:Visiteur:PrintFicheFrais }
 

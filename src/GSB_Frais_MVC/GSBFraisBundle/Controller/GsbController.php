@@ -5,7 +5,7 @@ namespace GSB_Frais_MVC\GSBFraisBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use GSB_Frais_MVC\GSBFraisBundle\Entity\Visiteur;
 use GSB_Frais_MVC\GSBFraisBundle\Entity\Vehicule;
-use GSB_Frais_MVC\GSBFraisBundle\Entity\Bdd;
+use GSB_Frais_MVC\GSBFraisBundle\Entity\BDD;
 use Symfony\Component\HttpFoundation\Response;
 
 class GsbController extends Controller
