@@ -2,7 +2,5 @@ gsb_frais:
     resource: "@GSBFraisBundle/Resources/config/routing.yml"
     prefix:   /
 
-epsi_blog:
-    resource: "@EpsiBlogBundle/Resources/config/routing.yml"
-    prefix:   /
+
 

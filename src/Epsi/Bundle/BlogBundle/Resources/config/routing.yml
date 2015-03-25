@@ -1,3 +1,0 @@
-epsi_blog_homepage:
-    path:     /hello/{name}
-    defaults: { _controller: EpsiBlogBundle:Default:index }

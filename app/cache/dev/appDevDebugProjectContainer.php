@@ -561,30 +561,26 @@ class appDevDebugProjectContainer extends Container
         $c = new \Doctrine\Common\Cache\ArrayCache();
         $c->setNamespace('sf2orm_default_b0676ab027417ba3f19617ad9199b4be');
 
-        $d = new \Doctrine\ORM\Mapping\Driver\SimplifiedYamlDriver(array(($this->targetDirs[3].'/src/Epsi/Bundle/BlogBundle/Resources/config/doctrine') => 'Epsi\\Bundle\\BlogBundle\\Entity'));
+        $d = new \Doctrine\ORM\Mapping\Driver\SimplifiedXmlDriver(array(($this->targetDirs[3].'/src/GSB_Frais_MVC/GSBFraisBundle/Resources/config/doctrine') => 'GSB_Frais_MVC\\GSBFraisBundle\\Entity'));
         $d->setGlobalBasename('mapping');
 
-        $e = new \Doctrine\ORM\Mapping\Driver\SimplifiedXmlDriver(array(($this->targetDirs[3].'/src/GSB_Frais_MVC/GSBFraisBundle/Resources/config/doctrine') => 'GSB_Frais_MVC\\GSBFraisBundle\\Entity'));
-        $e->setGlobalBasename('mapping');
+        $e = new \Doctrine\ORM\Mapping\Driver\DriverChain();
+        $e->addDriver($d, 'GSB_Frais_MVC\\GSBFraisBundle\\Entity');
 
-        $f = new \Doctrine\ORM\Mapping\Driver\DriverChain();
-        $f->addDriver($d, 'Epsi\\Bundle\\BlogBundle\\Entity');
-        $f->addDriver($e, 'GSB_Frais_MVC\\GSBFraisBundle\\Entity');
+        $f = new \Doctrine\ORM\Configuration();
+        $f->setEntityNamespaces(array('GSBFraisBundle' => 'GSB_Frais_MVC\\GSBFraisBundle\\Entity'));
+        $f->setMetadataCacheImpl($a);
+        $f->setQueryCacheImpl($b);
+        $f->setResultCacheImpl($c);
+        $f->setMetadataDriverImpl($e);
+        $f->setProxyDir((__DIR__.'/doctrine/orm/Proxies'));
+        $f->setProxyNamespace('Proxies');
+        $f->setAutoGenerateProxyClasses(true);
+        $f->setClassMetadataFactoryName('Doctrine\\ORM\\Mapping\\ClassMetadataFactory');
+        $f->setDefaultRepositoryClassName('Doctrine\\ORM\\EntityRepository');
+        $f->setNamingStrategy(new \Doctrine\ORM\Mapping\DefaultNamingStrategy());
 
-        $g = new \Doctrine\ORM\Configuration();
-        $g->setEntityNamespaces(array('EpsiBlogBundle' => 'Epsi\\Bundle\\BlogBundle\\Entity', 'GSBFraisBundle' => 'GSB_Frais_MVC\\GSBFraisBundle\\Entity'));
-        $g->setMetadataCacheImpl($a);
-        $g->setQueryCacheImpl($b);
-        $g->setResultCacheImpl($c);
-        $g->setMetadataDriverImpl($f);
-        $g->setProxyDir((__DIR__.'/doctrine/orm/Proxies'));
-        $g->setProxyNamespace('Proxies');
-        $g->setAutoGenerateProxyClasses(true);
-        $g->setClassMetadataFactoryName('Doctrine\\ORM\\Mapping\\ClassMetadataFactory');
-        $g->setDefaultRepositoryClassName('Doctrine\\ORM\\EntityRepository');
-        $g->setNamingStrategy(new \Doctrine\ORM\Mapping\DefaultNamingStrategy());
-
-        $this->services['doctrine.orm.default_entity_manager'] = $instance = call_user_func(array('Doctrine\\ORM\\EntityManager', 'create'), $this->get('doctrine.dbal.default_connection'), $g);
+        $this->services['doctrine.orm.default_entity_manager'] = $instance = call_user_func(array('Doctrine\\ORM\\EntityManager', 'create'), $this->get('doctrine.dbal.default_connection'), $f);
 
         $this->get('doctrine.orm.default_manager_configurator')->configure($instance);
 
@@ -2890,7 +2886,6 @@ class appDevDebugProjectContainer extends Container
         $instance->addPath(($this->targetDirs[3].'/vendor/symfony/symfony/src/Symfony/Bundle/TwigBundle/Resources/views'), 'Twig');
         $instance->addPath(($this->targetDirs[3].'/vendor/symfony/swiftmailer-bundle/Resources/views'), 'Swiftmailer');
         $instance->addPath(($this->targetDirs[3].'/vendor/doctrine/doctrine-bundle/Doctrine/Bundle/DoctrineBundle/Resources/views'), 'Doctrine');
-        $instance->addPath(($this->targetDirs[3].'/src/Epsi/Bundle/BlogBundle/Resources/views'), 'EpsiBlog');
         $instance->addPath(($this->targetDirs[3].'/src/GSB_Frais_MVC/GSBFraisBundle/Resources/views'), 'GSBFrais');
         $instance->addPath(($this->targetDirs[3].'/src/Acme/DemoBundle/Resources/views'), 'AcmeDemo');
         $instance->addPath(($this->targetDirs[3].'/vendor/symfony/symfony/src/Symfony/Bundle/WebProfilerBundle/Resources/views'), 'WebProfiler');
@@ -3342,7 +3337,6 @@ class appDevDebugProjectContainer extends Container
                 'AsseticBundle' => 'Symfony\\Bundle\\AsseticBundle\\AsseticBundle',
                 'DoctrineBundle' => 'Doctrine\\Bundle\\DoctrineBundle\\DoctrineBundle',
                 'SensioFrameworkExtraBundle' => 'Sensio\\Bundle\\FrameworkExtraBundle\\SensioFrameworkExtraBundle',
-                'EpsiBlogBundle' => 'Epsi\\Bundle\\BlogBundle\\EpsiBlogBundle',
                 'GSBFraisBundle' => 'GSB_Frais_MVC\\GSBFraisBundle\\GSBFraisBundle',
                 'AcmeDemoBundle' => 'Acme\\DemoBundle\\AcmeDemoBundle',
                 'WebProfilerBundle' => 'Symfony\\Bundle\\WebProfilerBundle\\WebProfilerBundle',

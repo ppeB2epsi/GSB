@@ -16,7 +16,6 @@
       <parameter key="AsseticBundle">Symfony\Bundle\AsseticBundle\AsseticBundle</parameter>
       <parameter key="DoctrineBundle">Doctrine\Bundle\DoctrineBundle\DoctrineBundle</parameter>
       <parameter key="SensioFrameworkExtraBundle">Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle</parameter>
-      <parameter key="EpsiBlogBundle">Epsi\Bundle\BlogBundle\EpsiBlogBundle</parameter>
       <parameter key="GSBFraisBundle">GSB_Frais_MVC\GSBFraisBundle\GSBFraisBundle</parameter>
       <parameter key="AcmeDemoBundle">Acme\DemoBundle\AcmeDemoBundle</parameter>
       <parameter key="WebProfilerBundle">Symfony\Bundle\WebProfilerBundle\WebProfilerBundle</parameter>
@@ -2224,7 +2223,6 @@
         <service class="Doctrine\ORM\Configuration" public="false">
           <call method="setEntityNamespaces">
             <argument type="collection">
-              <argument key="EpsiBlogBundle">Epsi\Bundle\BlogBundle\Entity</argument>
               <argument key="GSBFraisBundle">GSB_Frais_MVC\GSBFraisBundle\Entity</argument>
             </argument>
           </call>
@@ -2258,19 +2256,6 @@
           <call method="setMetadataDriverImpl">
             <argument type="service">
               <service class="Doctrine\ORM\Mapping\Driver\DriverChain" public="false">
-                <call method="addDriver">
-                  <argument type="service">
-                    <service class="Doctrine\ORM\Mapping\Driver\SimplifiedYamlDriver" public="false">
-                      <argument type="collection">
-                        <argument key="/var/www/html/GSB/src/Epsi/Bundle/BlogBundle/Resources/config/doctrine">Epsi\Bundle\BlogBundle\Entity</argument>
-                      </argument>
-                      <call method="setGlobalBasename">
-                        <argument>mapping</argument>
-                      </call>
-                    </service>
-                  </argument>
-                  <argument>Epsi\Bundle\BlogBundle\Entity</argument>
-                </call>
                 <call method="addDriver">
                   <argument type="service">
                     <service class="Doctrine\ORM\Mapping\Driver\SimplifiedXmlDriver" public="false">
@@ -2668,10 +2653,6 @@
       <call method="addPath">
         <argument>/var/www/html/GSB/vendor/doctrine/doctrine-bundle/Doctrine/Bundle/DoctrineBundle/Resources/views</argument>
         <argument>Doctrine</argument>
-      </call>
-      <call method="addPath">
-        <argument>/var/www/html/GSB/src/Epsi/Bundle/BlogBundle/Resources/views</argument>
-        <argument>EpsiBlog</argument>
       </call>
       <call method="addPath">
         <argument>/var/www/html/GSB/src/GSB_Frais_MVC/GSBFraisBundle/Resources/views</argument>
