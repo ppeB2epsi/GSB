@@ -23,7 +23,7 @@ class LoginController extends Controller
         $request = $this->get('request');
         $login =  $request->request->get('login');
         $mdp = $request->request->get('mdp');
-        //$pdo = PdoGsb::getPdoGsb();
+        $pdo = PdoGsb::getPdoGsb();
         $pdo = $this->get('pg_gsb_frais.pdo');
         $visiteur = $pdo->getInfosVisiteur($login,$mdp);
         if(!is_array($visiteur)){
