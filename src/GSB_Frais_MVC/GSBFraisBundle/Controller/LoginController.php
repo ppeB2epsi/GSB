@@ -27,19 +27,19 @@ class LoginController extends Controller
         $pdo = $this->get('pg_gsb_frais.pdo');
         $visiteur = $pdo->getInfosVisiteur($login,$mdp);
         if(!is_array($visiteur)){
-            return $this->render('GSBFraisBundle:Home:connexion.html.twig',array(
+            return $this->render('GSBFraisBundle:Default:connexion.html.twig',array(
                 'message'=>'Erreur de login ou de mot de passe '));
         }
         else{
             $session->set('id',$visiteur['id']);
             $session->set('nom',$visiteur['nom']);
             $session->set('prenom',$visiteur['prenom']);
-            return $this->render('PgGsbFraisBundle::accueil.html.twig');
+            return $this->render('GSBFraisBundle::accueil.html.twig');
         }
     }
     public function deconnexionAction(){
         $session= $this->get('request')->getSession();
         $session->clear();
-        return $this->render('GSBFraisBundle:Home:connexion.html.twig');
+        return $this->render('GSBFraisBundle:Default:connexion.html.twig');
     }
 }
