@@ -6,7 +6,7 @@
  * Time: 10:57
  */
 
-namespace GSB_Frais_MVC\GSBFraisBundle\Tests\Controller;
+namespace GSB_Frais_MVC\GSBFraisBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
@@ -16,15 +16,15 @@ class LoginController extends Controller
 
     public function indexAction($name)
     {
-        return $this->render('GSBFraisBundle:Default:index.html.twig', array('name' => $name));
+        return $this->render('GSBFraisBundle:Default:connexion.html.twig', array('name' => $name));
     }
     public function validerconnexionAction(){
         $session= $this->get('request')->getSession();
         $request = $this->get('request');
         $login =  $request->request->get('login');
         $mdp = $request->request->get('mdp');
-        $pdo = PdoGsb::getPdoGsb();
-        $pdo = $this->get('pg_gsb_frais.pdo');
+        //$pdo = PdoGsb::getPdoGsb();
+        $pdo = $this->get('v_connexion.php');
         $visiteur = $pdo->getInfosVisiteur($login,$mdp);
         if(!is_array($visiteur)){
             return $this->render('GSBFraisBundle:Default:connexion.html.twig',array(

@@ -6,7 +6,7 @@
  * Time: 10:57
  */
 
-namespace GSB_Frais_MVC\GSBFraisBundle\Tests\Controller;
+namespace GSB_Frais_MVC\GSBFraisBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 

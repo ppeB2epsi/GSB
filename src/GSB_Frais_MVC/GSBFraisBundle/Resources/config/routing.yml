@@ -2,6 +2,7 @@ gsb_frais_login:
     path:     /GSB/login/{name}
     defaults: { _controller: GSBFraisBundle:Login:index }
 
+
 gsb_frais_homepage:
   path:     /GSB/visiteur/{name}
   defaults: { _controller: VisiteurController:Default:index }

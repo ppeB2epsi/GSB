@@ -1,4 +1,4 @@
-{% extends "PgGsbFraisBundle::layout.html.twig" %}
+
 {% block body %}
  {% block bloc1 %} 
  <div id="contenu">
@@ -7,7 +7,7 @@
             <div class ="erreur">
             <ul>{{message}}</ul></div>
       {%endif%}
-<form method="POST" action="{{path('gsb_frais_validerconnexion')}}">
+<form method="POST" action="">
         <p>
           <label for="nom">Login*</label>
            <input id="login" type="text" name="login"  size="30" maxlength="45">
