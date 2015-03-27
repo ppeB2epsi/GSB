@@ -12,5 +12,9 @@ gsb_frais_comptable:
 
 gsb_frais_print:
     path:     /GSB/visiteur/print
-    defaults: { _controller: GSBFraisBundle:Visiteur:PrintFicheFrais }
+    defaults: { _controller: GSBFraisBundle:Visiteur:PrintVisiteur }
 
+
+_index:
+    path:     GSB/bdd
+    defaults: { _controller: GSBFraisBundle:BDD:Index }

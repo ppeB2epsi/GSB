@@ -2162,7 +2162,7 @@
         <argument key="driver">pdo_mysql</argument>
         <argument key="host">localhost</argument>
         <argument key="port"></argument>
-        <argument key="dbname">Blog</argument>
+        <argument key="dbname">gsb_frais</argument>
         <argument key="user">root</argument>
         <argument key="password"></argument>
         <argument key="charset">UTF8</argument>

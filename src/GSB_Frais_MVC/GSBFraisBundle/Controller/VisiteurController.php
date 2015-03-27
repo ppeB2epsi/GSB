@@ -8,9 +8,8 @@
 
 namespace GSB_Frais_MVC\GSBFraisBundle\Controller;
 
-use GSB_Frais_MVC\GSBFraisBundle\Controller\BDDController;
+use GSB_Frais_MVC\GSBFraisBundle\Entity\BDD;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-
 
 class VisiteurController extends Controller
 {
@@ -20,10 +19,13 @@ class VisiteurController extends Controller
         return $this->render('GSBFraisBundle:Default:index.html.twig', array('name' => $name));
     }
 
-    public function PrintFicheFraisAction()
+    public function PrintVisiteurAction()
     {
-        $bdd = new BDDController();
-        $fiches = $bdd->getVisiteurs();
+        $em = $this->getDoctrine()
+                   ->getManager();
+
+        $fiches = $em->getRepository('GSBFraisBundle:Visiteur')
+                     ->findAll();
 
         return $this->render('GSBFraisBundle:Visiteur:fichefrais.html.twig',array('fiches' => $fiches));
     }
